@@ -40,6 +40,11 @@ export function getStorageSync(key: string): string | undefined {
         // @ts-ignore
         return wx.getStorageSync(key)
     }
+    // @ts-ignore
+    if (typeof my == 'object' && typeof my.getStorageSync == 'function') {
+        // @ts-ignore
+        return my.getStorageSync(key)
+    }
     /* eslint-enable */
 }
 
@@ -66,6 +71,13 @@ export function setStorageSync(key: string, value: string) {
         // @ts-ignore
         return wx.setStorageSync(key, value)
     }
+
+    // @ts-ignore
+    if (typeof my == 'object' && typeof my.setStorageSync == 'function' ){
+        // @ts-ignore
+        return my.setStorageSync(key, value)
+    }
+
     /* eslint-enable */
 }
 
@@ -84,6 +96,11 @@ export function getSystemInfo(): SystemInfoType {
     if (typeof wx == 'object' && typeof wx.setStorageSync == 'function'){
         // @ts-ignore
         return wx.getSystemInfoSync()
+    }
+    // @ts-ignore
+    if (typeof my == 'object' && typeof my.setStorageSync == 'function'){
+        // @ts-ignore
+        return my.getSystemInfoSync()
     }
     /* eslint-enable */
 
@@ -114,9 +131,14 @@ export function request(options: object) {
     if (typeof uni == 'object' && typeof uni.getSystemInfo == 'function') {
         // @ts-ignore
         return uni.request(options)
-    } else {
+        // @ts-ignore
+    } else if (typeof wx == 'object' && typeof wx.getSystemInfo == 'function'){
         // @ts-ignore
         return wx.request(options)
+        // @ts-ignore
+    }else if (typeof my == 'object' && typeof my.getSystemInfo == 'function'){
+        // @ts-ignore
+        return my.request(options)
     }
     /* eslint-enable */
 }
