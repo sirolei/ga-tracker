@@ -1,7 +1,7 @@
 {
-    "name": "ga-tracker",
-    "version": "1.0.3",
-    "description": "Google Analytics SDK for Vue",
+    "name": "miniapp-ga-tracker",
+    "version": "1.0.0",
+    "description": "Google Analytics SDK for Wechat Alipay MiniApp and Uniapp",
     "scripts": {
         "dev": "rollup -w -c --sourcemap",
         "build": "rollup -c"
@@ -9,8 +9,8 @@
     "main": "index.js",
     "browser": "dist/index.js",
     "types": "dist/index.d.ts",
-    "repository": "git@github.com:OUDUIDUI/ga-tracker.git",
-    "author": "OUDUIDUI",
+    "repository": "git@github.com:sirolei/ga-tracker.git",
+    "author": "sirolei",
     "license": "MIT",
     "keywords": [
         "ga",
