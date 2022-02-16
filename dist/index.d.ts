@@ -426,4 +426,4 @@ declare const _default: {
     CampaignParams: typeof CampaignParams;
 };
 
-export default _default;
+export { _default as default };
