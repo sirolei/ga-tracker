@@ -267,6 +267,7 @@ export default class Tracker {
             header: {
                 "content-type": "text/plain" //"application/x-www-form-urlencoded"
             },
+            dataType:'text',
             success: function (res:object) {
                 self.ga.log && console.log(["ga:success", res]);
             },
