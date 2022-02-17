@@ -1,6 +1,6 @@
 {
     "name": "miniapp-ga-tracker",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Google Analytics SDK for Wechat Alipay MiniApp and Uniapp",
     "scripts": {
         "dev": "rollup -w -c --sourcemap",

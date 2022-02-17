@@ -1,4 +1,12 @@
 # 适用于UniApp和微信小程序的谷歌统计 (Google Analytics) SDK
+
+![npm](https://img.shields.io/npm/v/miniapp-ga-tracker) 
+![npm download counts](https://img.shields.io/npm/dt/miniapp-ga-tracker.svg) 
+[![GitHub stars](https://img.shields.io/github/stars/sirolei/ga-tracker)](https://github.com/sirolei/ga-tracker/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/sirolei/ga-tracker)](https://github.com/sirolei/ga-tracker/network) 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/sirolei/ga-tracker) 
+[![GitHub license](https://img.shields.io/github/license/sirolei/ga-tracker)](https://github.com/sirolei/ga-tracker/blob/master/LICENSE)
+
 完整实现了 [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/reference)，并且API接口和 [Google Analytics for Android](https://developers.google.com/analytics/devguides/collection/android/v4/) 保持高度一致。
 
 ## 快速入门
@@ -9,19 +17,23 @@
 
 首先在你的账号下，创建一个新的媒体资源，并且点开`高级选项`，勾选`创建Universal Analytics`。
 
+![create_property](./image/create_property.png)
+
 创建成功后，保存一下你的`跟踪id`。
 
 然后在该媒体资源下新建数据视图，选择`移动应用`，然后将原来的默认视图删除。
+
+![create_view](./image/create_view.png)
 
 ### 安装
 
 如果你使用`UniApp`框架开发的话，或者`WePY`、`mpVue`框架，可以使用`npm`进行安装。
 
 ```shell
-npm install @ouduidui/ga-tracker
+npm install miniapp-ga-tracker
 ```
 
-如果你使用微信小程序原生开发的话，即将[`ga.js`](https://github.com/OUDUIDUI/ga-tracker/releases)导入你的项目中。
+如果你使用微信小程序或者支付宝小程序原生开发的话，即将[`ga.js`](https://github.com/sirolei/ga-tracker/releases)导入你的项目中。
 
 ### 合法域名
 
@@ -82,7 +94,7 @@ server {
 在`main.js`引入。
 
 ```js
-import {GoogleAnalytics} from "@ouduidui/ga-tracker";
+import {GoogleAnalytics} from "miniapp-ga-tracker";
 
 const gaTracker = {
     instance: null,
@@ -119,7 +131,7 @@ Vue.prototype.$gaTracker = gaTracker;
 </template>
 
 <script>
-    import {HitBuilders}  from "@ouduidui/ga-tracker";
+    import {HitBuilders}  from "miniapp-ga-tracker";
 
 	export default {
 		data() {
@@ -140,13 +152,15 @@ Vue.prototype.$gaTracker = gaTracker;
 
 此时已运行项目既可在`ga`中实时查看到。
 
+![ga_test_demo](./image/ga_test_demo.png)
+
 ## 功能特点
 
 * 完整实现 [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/reference)
 * 支持多个匹配数据批量上报
 * 因为微信小程序只支持10个`wx.request`并发，为了不影响业务数据的网络请求，数据上报的时候按顺序进行，最多占用一个`wx.request`
 
-## [API参考](https://github.com/OUDUIDUI/ga-tracker/blob/master/docs/api.md)
+## [API参考](./docs/api.md)
 
 ## 代码示例
 
@@ -157,7 +171,7 @@ Vue.prototype.$gaTracker = gaTracker;
 ```javascript
 // gaTracker.js
 
-import ga from "@ouduidui/ga-tracker";
+import ga from "miniapp-ga-tracker";
 
 const GoogleAnalytics = ga.GoogleAnalytics;
 
@@ -237,7 +251,7 @@ app.$mount()
 
 ```vue
 <script>
-import {HitBuilders} from "@ouduidui/ga-tracker";
+import {HitBuilders} from "miniapp-ga-tracker";
 
 	export default {
 			onShow() {
@@ -332,7 +346,7 @@ this.$gaTracker.send(new HitBuilders.ScreenViewBuilder()
 >  **提醒** ：以下示例需要用到 `HitBuilders`, `Product`, `ProductAction`, `Promotion`。
 
 ```javascript
-import {HitBuilders, Product, ProductAction, Promotion} from "@ouduidui/ga-tracker";
+import {HitBuilders, Product, ProductAction, Promotion} from "miniapp-ga-tracker";
 ```
 
 #### 衡量展示

@@ -1,11 +1,11 @@
 # 适用于UniApp和微信小程序的谷歌统计 (Google Analytics) SDK
 
-![npm](https://img.shields.io/npm/v/@ouduidui/ga-tracker) 
-![npm download counts](https://img.shields.io/npm/dt/@ouduidui/ga-tracker.svg) 
-[![GitHub stars](https://img.shields.io/github/stars/OUDUIDUI/ga-tracker)](https://github.com/OUDUIDUI/ga-tracker/stargazers) 
-[![GitHub forks](https://img.shields.io/github/forks/OUDUIDUI/ga-tracker)](https://github.com/OUDUIDUI/ga-tracker/network) 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/ouduidui/ga-tracker) 
-[![GitHub license](https://img.shields.io/github/license/OUDUIDUI/ga-tracker)](https://github.com/OUDUIDUI/ga-tracker/blob/master/LICENSE)
+![npm](https://img.shields.io/npm/v/miniapp-ga-tracker) 
+![npm download counts](https://img.shields.io/npm/dt/miniapp-ga-tracker.svg) 
+[![GitHub stars](https://img.shields.io/github/stars/sirolei/ga-tracker)](https://github.com/sirolei/ga-tracker/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/sirolei/ga-tracker)](https://github.com/sirolei/ga-tracker/network) 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/sirolei/ga-tracker) 
+[![GitHub license](https://img.shields.io/github/license/sirolei/ga-tracker)](https://github.com/sirolei/ga-tracker/blob/master/LICENSE)
 
 完整实现了 [Measurement Protocol](https://developers.google.com/analytics/devguides/collection/protocol/v1/reference)，并且API接口和 [Google Analytics for Android](https://developers.google.com/analytics/devguides/collection/android/v4/) 保持高度一致。
 
@@ -30,10 +30,10 @@
 如果你使用`UniApp`框架开发的话，或者`WePY`、`mpVue`框架，可以使用`npm`进行安装。
 
 ```shell
-npm install @ouduidui/ga-tracker
+npm install miniapp-ga-tracker
 ```
 
-如果你使用微信小程序原生开发的话，即将[`ga.js`](https://github.com/OUDUIDUI/ga-tracker/releases)导入你的项目中。
+如果你使用微信小程序或者支付宝小程序原生开发的话，即将[`ga.js`](https://github.com/sirolei/ga-tracker/releases)导入你的项目中。
 
 ### 合法域名
 
@@ -94,7 +94,7 @@ server {
 在`main.js`引入。
 
 ```js
-import {GoogleAnalytics} from "@ouduidui/ga-tracker";
+import {GoogleAnalytics} from "miniapp-ga-tracker";
 
 const gaTracker = {
     instance: null,
@@ -131,7 +131,7 @@ Vue.prototype.$gaTracker = gaTracker;
 </template>
 
 <script>
-    import {HitBuilders}  from "@ouduidui/ga-tracker";
+    import {HitBuilders}  from "miniapp-ga-tracker";
 
 	export default {
 		data() {
@@ -171,7 +171,7 @@ Vue.prototype.$gaTracker = gaTracker;
 ```javascript
 // gaTracker.js
 
-import ga from "@ouduidui/ga-tracker";
+import ga from "miniapp-ga-tracker";
 
 const GoogleAnalytics = ga.GoogleAnalytics;
 
@@ -251,7 +251,7 @@ app.$mount()
 
 ```vue
 <script>
-import {HitBuilders} from "@ouduidui/ga-tracker";
+import {HitBuilders} from "miniapp-ga-tracker";
 
 	export default {
 			onShow() {
@@ -346,7 +346,7 @@ this.$gaTracker.send(new HitBuilders.ScreenViewBuilder()
 >  **提醒** ：以下示例需要用到 `HitBuilders`, `Product`, `ProductAction`, `Promotion`。
 
 ```javascript
-import {HitBuilders, Product, ProductAction, Promotion} from "@ouduidui/ga-tracker";
+import {HitBuilders, Product, ProductAction, Promotion} from "miniapp-ga-tracker";
 ```
 
 #### 衡量展示

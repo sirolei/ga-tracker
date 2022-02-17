@@ -1,12 +1,12 @@
 {
-    "name": "@ouduidui/ga-tracker",
-    "version": "1.0.1",
-    "description": "Google Analytics SDK for UniApp and weixin-miniProgram",
+    "name": "miniapp-ga-tracker",
+    "version": "1.0.2",
+    "description": "Google Analytics SDK for UniApp 、weixin-miniProgram and alipay-miniProgram",
     "main": "index.js",
     "browser": "index.js",
     "types": "index.d.ts",
-    "repository": "git@github.com:OUDUIDUI/ga-tracker.git",
-    "author": "OUDUIDUI",
+    "repository": "git@github.com:sirolei/ga-tracker.git",
+    "author": "sirolei",
     "license": "MIT",
     "keywords": [
         "ga",
