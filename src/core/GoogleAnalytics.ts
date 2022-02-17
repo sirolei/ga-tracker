@@ -38,6 +38,18 @@ export default class GoogleAnalytics {
     }
 
     /**
+     * 设置cid
+     * @param cid 
+     * @returns 
+     */
+    setCid(cid:string | undefined): GoogleAnalytics {
+        if (cid){
+            this.cid = cid;
+        }
+        return this;
+    }
+
+    /**
      * 设置APP名称
      * @param appName
      * */

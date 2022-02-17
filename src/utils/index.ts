@@ -24,11 +24,6 @@ export function getUUID(): string {
 export function getStorageSync(key: string): string | undefined {
     if (!key) return;
     /* eslint-disable */
-    if (typeof window == 'object' && typeof window.localStorage == 'object') {
-        // @ts-ignore
-        return localStorage.getItem(key)
-    }
-
     // @ts-ignore
     if (typeof uni == 'object' && typeof uni.getStorageSync == 'function') {
         // @ts-ignore
@@ -43,7 +38,16 @@ export function getStorageSync(key: string): string | undefined {
     // @ts-ignore
     if (typeof my == 'object' && typeof my.getStorageSync == 'function') {
         // @ts-ignore
-        return my.getStorageSync(key)
+        const result = my.getStorageSync({ key: key });
+        if (result) {
+            return result.data;
+        }
+        return;
+    }
+    // @ts-ignore
+    if (typeof window == 'object' && typeof window.localStorage == 'object') {
+        // @ts-ignore
+        return localStorage.getItem(key)
     }
     /* eslint-enable */
 }
@@ -57,10 +61,6 @@ export function getStorageSync(key: string): string | undefined {
 export function setStorageSync(key: string, value: string) {
     if (!key) return;
     /* eslint-disable */
-    if (typeof window == 'object' && typeof window.localStorage == 'object') {
-        // @ts-ignore
-        return localStorage.setItem(key, value)
-    }
     // @ts-ignore
     if (typeof uni == 'object' && typeof uni.setStorageSync == 'function') {
         // @ts-ignore
@@ -75,7 +75,14 @@ export function setStorageSync(key: string, value: string) {
     // @ts-ignore
     if (typeof my == 'object' && typeof my.setStorageSync == 'function' ){
         // @ts-ignore
-        return my.setStorageSync(key, value)
+        const result = my.setStorageSync({ key : key, data:value})
+        console.log
+        return result;
+    }
+     // @ts-ignore
+    if (typeof window == 'object' && typeof window.localStorage == 'object') {
+        // @ts-ignore
+        return localStorage.setItem(key, value)
     }
 
     /* eslint-enable */
