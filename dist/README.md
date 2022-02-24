@@ -1,4 +1,4 @@
-# 适用于UniApp和微信小程序的谷歌统计 (Google Analytics) SDK
+# 适用于UniApp、微信和支付宝小程序的谷歌统计 (Google Analytics) SDK
 
 ![npm](https://img.shields.io/npm/v/miniapp-ga-tracker) 
 ![npm download counts](https://img.shields.io/npm/dt/miniapp-ga-tracker.svg) 
