@@ -264,10 +264,7 @@ export default class Tracker {
             url: apiUrl,
             data: payloadData,
             method: 'POST',
-            header: {
-                "content-type": "text/plain" //"application/x-www-form-urlencoded"
-            },
-            dataType:'text',
+            dataType:'base64',
             success: function (res:object) {
                 self.ga.log && console.log(["ga:success", res]);
             },
